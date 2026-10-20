@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Reservasi Kamar - Royal Ambarrukmo Sidoarjo</title>
+</head>
+
+<body>
+
+  <header>
+    <h1>ROYAL AMBARRUKMO SIDOARJO</h1>
+    <p>Formulir Resmi Pemesanan &amp; Reservasi Kamar Hotel</p>
+  </header>
+
+  <hr>
+
+  <main>
+      <form id="form-reservasi" action="berhasil.html" method="get">
+
+      <input type="hidden" name="hotel_branch_id" value="GNH-01">
+      <input type="hidden" name="currency" value="IDR">
+
+      <fieldset>
+        <caption><strong>1. Data Identitas &amp; Kontak Tamu</strong></caption>
+        <table>
+          <tr>
+            <td><label for="nama_lengkap">Nama Lengkap *</label></td>
+            <td>
+              <input type="text" id="nama_lengkap" name="nama_lengkap" placeholder="Jordi" required minlength="3"
+                maxlength="60">
+            </td>
+          </tr>
+          <tr>
+            <td><label for="telepon">Nomor Telepon / WhatsApp *</label></td>
+            <td>
+              <input type="tel" id="telepon" name="telepon" placeholder="0812..." pattern="[0-9+]{10,15}" required>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="email">Alamat Email</label></td>
+            <td>
+              <input type="email" id="email" name="email" placeholder="hildan@gmail.com" autocomplete="email">
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <br>
+
+      <fieldset>
+        <caption><strong>2. Detail Waktu Menginap</strong></caption>
+        <table>
+          <tr>
+            <td><label for="tgl_checkin">Tanggal Check-In *</label></td>
+            <td>
+              <input type="date" id="tgl_checkin" name="tgl_checkin" min="2026-10-20" value="2026-10-21" required>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="tgl_checkout">Tanggal Check-Out *</label></td>
+            <td>
+              <input type="date" id="tgl_checkout" name="tgl_checkout" min="2026-10-20" value="2026-10-22" required>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="jam_datang">Perkiraan Jam Kedatangan *</label></td>
+            <td>
+              <input type="time" id="jam_datang" name="jam_datang" value="14:00" required>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <br>
+
+      <fieldset>
+        <caption><strong>3. Detail Kamar &amp; Jumlah Tamu</strong></caption>
+        <p><strong>Pilih Jenis Kamar (Beserta Batas Maksimal Tamu per Kamar) *</strong></p>
+
+        <table border="1" cellpadding="6" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Pilih</th>
+              <th>Jenis Kamar</th>
+              <th>Tarif / Malam</th>
+              <th>Maks. Dewasa / Kamar</th>
+              <th>Maks. Anak / Kamar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="center">
+                <input type="radio" id="kamar_standard" name="jenis_kamar" value="Standard" required>
+              </td>
+              <td><label for="kamar_standard"><strong>Standard Room</strong></label></td>
+              <td>Rp 500.000</td>
+              <td>Maks. 2 Dewasa</td>
+              <td>Maks. 1 Anak</td>
+            </tr>
+            <tr>
+              <td align="center">
+                <input type="radio" id="kamar_superior" name="jenis_kamar" value="Superior" checked>
+              </td>
+              <td><label for="kamar_superior"><strong>Superior Room</strong></label></td>
+              <td>Rp 750.000</td>
+              <td>Maks. 2 Dewasa</td>
+              <td>Maks. 1 Anak</td>
+            </tr>
+            <tr>
+              <td align="center">
+                <input type="radio" id="kamar_deluxe" name="jenis_kamar" value="Deluxe">
+              </td>
+              <td><label for="kamar_deluxe"><strong>Deluxe Room</strong></label></td>
+              <td>Rp 1.100.000</td>
+              <td>Maks. 3 Dewasa</td>
+              <td>Maks. 2 Anak</td>
+            </tr>
+            <tr>
+              <td align="center">
+                <input type="radio" id="kamar_suite" name="jenis_kamar" value="Suite">
+              </td>
+              <td><label for="kamar_suite"><strong>Executive Suite</strong></label></td>
+              <td>Rp 2.000.000</td>
+              <td>Maks. 4 Dewasa</td>
+              <td>Maks. 2 Anak</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <br>
+
+        <table>
+          <tr>
+            <td><label for="jumlah_kamar">Jumlah Kamar yang Dipesan *:</label></td>
+            <td>
+              <input type="number" id="jumlah_kamar" name="jumlah_kamar" min="1" max="5" value="1" required> kamar
+            </td>
+          </tr>
+          <tr>
+            <td><label for="tamu_dewasa">Jumlah Tamu Dewasa (per Kamar) *:</label></td>
+            <td>
+              <!-- Dibatasi min="1" dan max="4" sesuai kapasitas tertinggi kamar -->
+              <input type="number" id="tamu_dewasa" name="tamu_dewasa" min="1" max="4" value="2" required> orang
+              <small>*(Standard/Superior: maks 2 | Deluxe: maks 3 | Suite: maks 4)*</small>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="tamu_anak">Jumlah Tamu Anak-anak (&lt; 12 Tahun per Kamar):</label></td>
+            <td>
+              <!-- Dibatasi min="0" dan max="2" sesuai kapasitas tertinggi kamar -->
+              <input type="number" id="tamu_anak" name="tamu_anak" min="0" max="2" value="0"> anak
+              <small>*(Standard/Superior: maks 1 | Deluxe/Suite: maks 2)*</small>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <br>
+
+      <fieldset>
+        <caption><strong>4. Rincian Biaya</strong></caption>
+        <p><strong>Biaya Tambahan Opsional</strong></p>
+        <label>
+          <input type="checkbox" name="biaya_tambahan" value="sarapan_buffet" checked>
+          Tambahan Paket Sarapan / Breakfast (+Rp 150.000)
+        </label><br>
+        <label>
+          <input type="checkbox" name="biaya_tambahan" value="extra_bed">
+          Tambahan Extra Bed (+Rp 250.000)
+        </label>
+
+        <hr>
+
+        <table>
+          <tr>
+            <td><label for="tarif_malam">Tarif Kamar per Malam</label></td>
+            <td>
+              Rp <input type="number" id="tarif_malam" name="tarif_malam" value="750000" readonly>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="biaya_pajak">Pajak &amp; Layanan Hotel (11%)</label></td>
+            <td>
+              Rp <input type="number" id="biaya_pajak" name="biaya_pajak" value="181500" readonly>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="total_pembayaran"><strong>Total Pembayaran</strong></label></td>
+            <td>
+              <strong>Rp <input type="number" id="total_pembayaran" name="total_pembayaran" value="1831500"
+                  readonly></strong>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <br>
+
+      <fieldset>
+        <caption><strong>5. Metode Pembayaran</strong></caption>
+        <p><strong>Pilih Metode Pembayaran *:</strong></p>
+        <label>
+          <input type="radio" name="metode_pembayaran" value="transfer_bank" required checked>
+          Transfer Bank / Virtual Account
+        </label><br>
+        <label>
+          <input type="radio" name="metode_pembayaran" value="tunai">
+          Tunai (COD)
+        </label>
+
+        <hr>
+
+        <p><strong>Informasi Nomor Virtual Account &amp; Rekening</strong></p>
+        <small>Silakan lakukan pembayaran ke salah satu nomor Virtual Account / Rekening di bawah ini atas nama <strong>PT Royal Ambarrukmo Sidoarjo</strong></small>
+        <table border="1" cellpadding="6" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Nama Bank</th>
+              <th>Jenis Pembayaran</th>
+              <th>Nomor Virtual Account / Rekening</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bank BCA</strong></td>
+              <td>Virtual Account</td>
+              <td><code>88012 0812 3456 789</code></td>
+            </tr>
+            <tr>
+              <td><strong>Bank Mandiri</strong></td>
+              <td>Virtual Account</td>
+              <td><code>89022 0812 3456 789</code></td>
+            </tr>
+            <tr>
+              <td><strong>Bank BNI</strong></td>
+              <td>Transfer Rekening</td>
+              <td><code>0456 789 123</code></td>
+            </tr>
+            <tr>
+              <td><strong>Bank BRI</strong></td>
+              <td>Virtual Account</td>
+              <td><code>77033 0812 3456 789</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <br>
+
+        <table>
+          <tr>
+            <td><label for="rekening_tujuan">Pilih / Ketik Tujuan VA atau Bank Transfer:</label></td>
+            <td>
+              <input type="text" id="rekening_tujuan" name="rekening_tujuan" size="45" placeholder="Contoh: BCA VA - 8801208123456789" list="daftar_va_hotel">
+              <datalist id="daftar_va_hotel">
+                <option value="BCA Virtual Account - 8801208123456789"></option>
+                <option value="Mandiri Virtual Account - 8902208123456789"></option>
+                <option value="BNI Transfer Rekening - 0456789123"></option>
+                <option value="BRI Virtual Account - 7703308123456789"></option>
+              </datalist>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="bukti_transfer">Unggah Bukti Transfer (Khusus Transfer Bank/VA):</label></td>
+            <td>
+              <input type="file" id="bukti_transfer" name="bukti_transfer" accept="image/*,.pdf">
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <br>
+
+      <fieldset>
+        <caption><strong>6. Permintaan Khusus (Special Request)</strong></caption>
+        <p><strong>Pilih Fasilitas / Permintaan Tambahan (Opsional)</strong></p>
+        <label>
+          <input type="checkbox" name="special_request" value="non_smoking" checked>
+          Kamar Bebas Asap Rokok (Non-Smoking Room)
+        </label><br>
+        <label>
+          <input type="checkbox" name="special_request" value="high_floor">
+          Kamar Lantai Tinggi (High Floor)
+        </label><br>
+        <label>
+          <input type="checkbox" name="special_request" value="extra_bed_req">
+          Permintaan Siapkan Extra Bed di Kamar
+        </label><br>
+        <label>
+          <input type="checkbox" name="special_request" value="aksesibilitas">
+          Kebutuhan Aksesibilitas (Ramah Kursi Roda / Dekat Lift)
+        </label>
+
+        <br><br>
+
+        <table>
+          <tr>
+            <td><label for="catatan_khusus">Catatan Tambahan Lainnya:</label></td>
+            <td>
+              <input type="text" id="catatan_khusus" name="catatan_khusus" size="50" maxlength="200"
+                placeholder="Tuliskan permintaan khusus lainnya di sini...">
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <br>
+
+      <fieldset>
+        <caption><strong>7. Konfirmasi Reservasi</strong></caption>
+        <p>
+          <label>
+            <input type="checkbox" name="persetujuan" value="setuju" required>
+            <strong>Saya menyetujui syarat dan ketentuan. *</strong>
+          </label>
+        </p>
+
+        <p>
+          <input type="submit" value="Kirim Reservasi">
+          <input type="reset" value="Reset Formulir">
+        </p>
+      </fieldset>
+
+    </form>
+  </main>
+
+  <hr>
+
+  <footer>
+    <small>&copy; 2026 Royal Ambarrukmo Sidoarjo</small>
+  </footer>
+
+</body>
+
+</html>
