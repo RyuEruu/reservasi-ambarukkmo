@@ -5,37 +5,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulir Reservasi Kamar - Royal Ambarrukmo Sidoarjo</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
   <header>
-    <h1>ROYAL AMBARRUKMO SIDOARJO</h1>
+    <img src="foto/royal.png" alt="Logo Hotel" class="logo-hotel">
+    <h1>ROYAL AMBARRUKMO X ZOO</h1>
     <p>Formulir Resmi Pemesanan &amp; Reservasi Kamar Hotel</p>
   </header>
 
   <hr>
 
   <main>
-      <form id="form-reservasi" action="berhasil.html" method="get">
-
-      <input type="hidden" name="hotel_branch_id" value="GNH-01">
-      <input type="hidden" name="currency" value="IDR">
-
+    <form id="form-reservasi" action="berhasil.html" method="get">
       <fieldset>
         <caption><strong>1. Data Identitas &amp; Kontak Tamu</strong></caption>
         <table>
           <tr>
             <td><label for="nama_lengkap">Nama Lengkap *</label></td>
             <td>
-              <input type="text" id="nama_lengkap" name="nama_lengkap" placeholder="Jordi" required minlength="3"
+              <input type="text" id="nama_lengkap" name="nama_lengkap" placeholder="Hildan Setya" required minlength="3"
                 maxlength="60">
             </td>
           </tr>
           <tr>
             <td><label for="telepon">Nomor Telepon / WhatsApp *</label></td>
             <td>
-              <input type="tel" id="telepon" name="telepon" placeholder="0812..." pattern="[0-9+]{10,15}" required>
+              <input type="tel" id="telepon" name="telepon" placeholder="081234567890" pattern="[0-9+]{10,15}" required>
             </td>
           </tr>
           <tr>
@@ -55,13 +53,13 @@
           <tr>
             <td><label for="tgl_checkin">Tanggal Check-In *</label></td>
             <td>
-              <input type="date" id="tgl_checkin" name="tgl_checkin" min="2026-10-20" value="2026-10-21" required>
+              <input type="date" id="tgl_checkin" name="tgl_checkin" min="2026-10-28" value="2026-10-28" required>
             </td>
           </tr>
           <tr>
             <td><label for="tgl_checkout">Tanggal Check-Out *</label></td>
             <td>
-              <input type="date" id="tgl_checkout" name="tgl_checkout" min="2026-10-20" value="2026-10-22" required>
+              <input type="date" id="tgl_checkout" name="tgl_checkout" min="2026-10-28" value="2026-10-29" required>
             </td>
           </tr>
           <tr>
@@ -79,7 +77,7 @@
         <caption><strong>3. Detail Kamar &amp; Jumlah Tamu</strong></caption>
         <p><strong>Pilih Jenis Kamar (Beserta Batas Maksimal Tamu per Kamar) *</strong></p>
 
-        <table border="1" cellpadding="6" cellspacing="0">
+        <table border="1">
           <thead>
             <tr>
               <th>Pilih</th>
@@ -141,7 +139,6 @@
           <tr>
             <td><label for="tamu_dewasa">Jumlah Tamu Dewasa (per Kamar) *:</label></td>
             <td>
-              <!-- Dibatasi min="1" dan max="4" sesuai kapasitas tertinggi kamar -->
               <input type="number" id="tamu_dewasa" name="tamu_dewasa" min="1" max="4" value="2" required> orang
               <small>*(Standard/Superior: maks 2 | Deluxe: maks 3 | Suite: maks 4)*</small>
             </td>
@@ -149,7 +146,6 @@
           <tr>
             <td><label for="tamu_anak">Jumlah Tamu Anak-anak (&lt; 12 Tahun per Kamar):</label></td>
             <td>
-              <!-- Dibatasi min="0" dan max="2" sesuai kapasitas tertinggi kamar -->
               <input type="number" id="tamu_anak" name="tamu_anak" min="0" max="2" value="0"> anak
               <small>*(Standard/Superior: maks 1 | Deluxe/Suite: maks 2)*</small>
             </td>
@@ -213,7 +209,8 @@
         <hr>
 
         <p><strong>Informasi Nomor Virtual Account &amp; Rekening</strong></p>
-        <small>Silakan lakukan pembayaran ke salah satu nomor Virtual Account / Rekening di bawah ini atas nama <strong>PT Royal Ambarrukmo Sidoarjo</strong></small>
+        <small>Silakan lakukan pembayaran ke salah satu nomor Virtual Account / Rekening di bawah ini atas nama
+          <strong>PT Ambarrukmo Zoo</strong></small>
         <table border="1" cellpadding="6" cellspacing="0">
           <thead>
             <tr>
@@ -252,7 +249,8 @@
           <tr>
             <td><label for="rekening_tujuan">Pilih / Ketik Tujuan VA atau Bank Transfer:</label></td>
             <td>
-              <input type="text" id="rekening_tujuan" name="rekening_tujuan" size="45" placeholder="Contoh: BCA VA - 8801208123456789" list="daftar_va_hotel">
+              <input type="text" id="rekening_tujuan" name="rekening_tujuan" size="45"
+                placeholder="Contoh: BCA VA - 8801208123456789" list="daftar_va_hotel">
               <datalist id="daftar_va_hotel">
                 <option value="BCA Virtual Account - 8801208123456789"></option>
                 <option value="Mandiri Virtual Account - 8902208123456789"></option>
@@ -328,7 +326,7 @@
   <hr>
 
   <footer>
-    <small>&copy; 2026 Royal Ambarrukmo Sidoarjo</small>
+    <small>&copy; 2026 Royal Ambarrukmo x Zoo</small>
   </footer>
 
 </body>
